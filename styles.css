@@ -165,7 +165,7 @@ h1 {
 
 .concept-panel {
   margin-top: clamp(48px, 9vw, 90px);
-  background: #ffffff;
+  background: #343B44;
   border-radius: 48px 48px 0 0;
   padding: clamp(32px, 6vw, 72px) 0 clamp(64px, 10vw, 140px);
   color: #1a1e26;
@@ -181,10 +181,10 @@ h1 {
 }
 
 .content-block {
-  background: #ededed;
+  background: #2C333A;
   border-radius: 32px;
   border: 1px solid rgba(16, 16, 16, 0.05);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+  /* box-shadow: inset 0 1px 0 #1e2226; */
 }
 
 .concept-feature {
