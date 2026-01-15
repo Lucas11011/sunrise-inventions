@@ -1,0 +1,273 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  background: #1e2226;
+}
+
+body {
+  background: linear-gradient(120deg, #252a30 0%, #1e2226 100%);
+  color: #f0f0f5;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.45;
+  overflow-x: hidden;
+}
+
+main {
+  padding-top: 140px;
+}
+
+header {
+  background: rgba(217, 217, 217, 0.03);
+  display: flex;
+  justify-content: center;
+  padding: 10px 0 8px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+}
+
+header::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #29313d 6%, #575946 25%, #283846 44%);
+  opacity: 0.9;
+}
+
+.header-inner {
+  width: min(980px, calc(100% - 10vw));
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: clamp(0.75rem, 2.5vw, 2.5rem);
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding-top: 8px;
+  padding-bottom: 20px;
+}
+
+.logo-svg {
+  width: clamp(80px, 14vw, 120px);
+  height: auto;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(24px, 3vw, 64px);
+  margin-left: clamp(36px, 8vw, 120px);
+}
+
+nav a {
+  color: #ddd;
+  text-decoration: none;
+  font-size: 0.88rem;
+  font-weight: 500;
+  transition: color 0.25s;
+}
+
+nav a:hover {
+  color: #fff;
+}
+
+.has-js .reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  will-change: opacity, transform;
+}
+
+.has-js .reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .has-js .reveal,
+  .has-js .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* ── HERO ── */
+
+.hero {
+  width: min(1100px, calc(100% - 10vw));
+  margin: clamp(8px, 3vw, 36px) auto clamp(32px, 6vw, 64px);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 60vh;
+  padding: clamp(22px, 3.5vw, 72px) clamp(10px, 2.5vw, 36px);
+  align-items: center;
+  position: relative;
+  gap: 1.8rem;
+}
+
+.hero-left {
+  padding-bottom: 3vh;
+}
+
+h1 {
+  font-size: clamp(2.2rem, 6vw, 5.8rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 0.92;
+  margin-bottom: 1.5rem;
+}
+
+.highlight {
+  color: #ffd700;
+  position: relative;
+  display: inline-block;
+}
+
+.subtitle {
+  font-size: clamp(1rem, 2.4vw, 1.4rem);
+  font-weight: 300;
+  color: #bbbbdd;
+  max-width: 620px;
+  opacity: 0.92;
+  line-height: 1.35;
+}
+
+/* Right side - your SVG illustration */
+.hero-right {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-svg {
+  width: 80%;
+  max-width: 420px;
+  height: auto;
+  object-fit: contain;
+}
+
+.concept-panel {
+  margin-top: clamp(48px, 9vw, 90px);
+  background: #ffffff;
+  border-radius: 48px 48px 0 0;
+  padding: clamp(32px, 6vw, 72px) 0 clamp(64px, 10vw, 140px);
+  color: #1a1e26;
+  box-shadow: 0 -20px 60px rgba(0, 0, 0, 0.25);
+}
+
+.concept-shell {
+  width: min(1100px, calc(100% - 12vw));
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(32px, 6vw, 64px);
+}
+
+.content-block {
+  background: #ededed;
+  border-radius: 32px;
+  border: 1px solid rgba(16, 16, 16, 0.05);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+.concept-feature {
+  min-height: clamp(220px, 38vw, 420px);
+}
+
+.concept-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(18px, 3vw, 32px);
+}
+
+.concept-card {
+  min-height: clamp(140px, 22vw, 220px);
+}
+
+.concept-brand {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: clamp(16px, 4vw, 32px);
+}
+
+.concept-logo {
+  width: 110px;
+  height: auto;
+}
+
+/* Responsive */
+@media (max-width: 1100px) {
+  .hero {
+    grid-template-columns: 1fr;
+    padding-top: clamp(12px, 2.5vw, 28px);
+  }
+
+  .hero-right {
+    order: -1;
+    margin-bottom: 2rem;
+  }
+
+  .hero-svg {
+    max-width: 320px;
+  }
+}
+
+@media (max-width: 680px) {
+  header {
+    padding: 18px 0;
+  }
+
+  .header-inner {
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+    padding: 0 6vw;
+  }
+
+  nav {
+    margin-left: 0;
+    gap: 1.25rem;
+  }
+
+  nav a {
+    font-size: 0.95rem;
+  }
+
+  h1 {
+    font-size: 3.2rem;
+  }
+
+  .subtitle {
+    font-size: 1.3rem;
+  }
+
+  .concept-panel {
+    border-radius: 32px 32px 0 0;
+  }
+
+  .concept-shell {
+    width: min(640px, calc(100% - 12vw));
+  }
+
+  .concept-grid {
+    grid-template-columns: 1fr;
+  }
+}
