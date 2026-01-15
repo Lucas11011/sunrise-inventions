@@ -46,7 +46,7 @@ header::after {
 }
 
 .header-inner {
-  width: min(980px, calc(100% - 10vw));
+  width: min(1250px, calc(100% - 4vw));
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -70,13 +70,13 @@ nav {
   display: flex;
   align-items: center;
   gap: clamp(24px, 3vw, 64px);
-  margin-left: clamp(36px, 8vw, 120px);
+  margin-left: clamp(22px, 5vw, 96px);
 }
 
 nav a {
   color: #ddd;
   text-decoration: none;
-  font-size: 0.88rem;
+  font-size: 1rem;
   font-weight: 500;
   transition: color 0.25s;
 }
@@ -109,12 +109,12 @@ nav a:hover {
 /* ── HERO ── */
 
 .hero {
-  width: min(1100px, calc(100% - 10vw));
+  width: min(1240px, calc(100% - 4vw));
   margin: clamp(8px, 3vw, 36px) auto clamp(32px, 6vw, 64px);
   display: grid;
   grid-template-columns: 1fr 1fr;
   min-height: 60vh;
-  padding: clamp(22px, 3.5vw, 72px) clamp(10px, 2.5vw, 36px);
+  padding: clamp(26px, 4vw, 80px) clamp(6px, 1.6vw, 24px);
   align-items: center;
   position: relative;
   gap: 1.8rem;
@@ -125,7 +125,7 @@ nav a:hover {
 }
 
 h1 {
-  font-size: clamp(2.2rem, 6vw, 5.8rem);
+  font-size: clamp(2.5rem, 6.8vw, 6.5rem);
   font-weight: 800;
   letter-spacing: -0.04em;
   line-height: 0.92;
@@ -139,7 +139,7 @@ h1 {
 }
 
 .subtitle {
-  font-size: clamp(1rem, 2.4vw, 1.4rem);
+  font-size: clamp(1.1rem, 2.8vw, 1.6rem);
   font-weight: 300;
   color: #bbbbdd;
   max-width: 620px;
