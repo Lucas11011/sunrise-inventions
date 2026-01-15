@@ -17,7 +17,7 @@ body {
 }
 
 main {
-  padding-top: 140px;
+  padding-top: 120px;
 }
 
 header {
@@ -122,6 +122,7 @@ nav a:hover {
 
 .hero-left {
   padding-bottom: 3vh;
+  padding-left: 3vw;
 }
 
 h1 {
