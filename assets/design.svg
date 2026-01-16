@@ -7,15 +7,21 @@
 }
 
 @keyframes pulseGlow {
-	0% { transform: scale(0.96); opacity: 0.8; }
-	50% { transform: scale(1.04); opacity: 1; }
-	100% { transform: scale(0.96); opacity: 0.8; }
+	0% { transform: scale(1.05); opacity: 0.8; }
+	50% { transform: scale(1.18); opacity: 1; }
+	100% { transform: scale(1.05); opacity: 0.8; }
 }
 
 @keyframes accentDrift {
 	0% { transform: translateY(0px) rotate(0deg); }
 	50% { transform: translateY(-10px) rotate(4deg); }
 	100% { transform: translateY(0px) rotate(0deg); }
+}
+
+@keyframes accentDriftLarge {
+	0% { transform: translateY(0px) rotate(0deg) scale(1.25); }
+	50% { transform: translateY(-10px) rotate(4deg) scale(1.3); }
+	100% { transform: translateY(0px) rotate(0deg) scale(1.25); }
 }
 
 @keyframes dashFlow {
@@ -39,8 +45,8 @@
 .spark-tertiary { animation: pulseGlow 4.5s ease-in-out infinite 2s; }
 
 .accent-pink { animation: accentDrift 8s ease-in-out infinite; }
-.accent-yellow { animation: accentDrift 7s ease-in-out infinite 1.2s; }
-.accent-green { animation: accentDrift 9s ease-in-out infinite 0.8s; }
+.accent-yellow { animation: accentDriftLarge 7s ease-in-out infinite 1.2s; }
+.accent-green { animation: accentDriftLarge 9s ease-in-out infinite 0.8s; }
 
 .grid-line {
 	animation: dashFlow 14s linear infinite;

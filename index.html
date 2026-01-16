@@ -11,9 +11,9 @@
 
   <header>
     <div class="header-inner">
-      <div class="logo">
+      <a href="#top" class="logo" aria-label="Sunrise Inventions home">
         <img src="assets/logo.svg" alt="Sunrise Inventions logo" class="logo-svg" />
-      </div>
+      </a>
 
       <nav>
         <a href="#about">About</a>
@@ -23,7 +23,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="top">
     <div class="hero reveal">
       <div class="hero-left reveal">
         <h1>
@@ -48,19 +48,77 @@
       </div>
     </div>
 
-    <section class="concept-panel">
+    <section class="concept-panel" id="about">
       <div class="concept-shell">
-        <div class="concept-feature content-block mission-panel reveal"></div>
-
-        <div class="concept-grid">
-          <div class="concept-card content-block reveal"></div>
-          <div class="concept-card content-block reveal"></div>
-          <div class="concept-card content-block reveal"></div>
+        <div class="concept-feature content-block mission-panel reveal">
+          <div class="panel-heading">
+            <h2>About</h2>
+            <img src="assets/stars.svg" alt="Spark icon" class="panel-icon"/>
+          </div>
+          <p>
+            We're a software development agency that designs and builds digital products for the modern world.
+            Our work blends clean, accessible design with robust engineering and thoughtfully integrated AI — creating
+            apps and websites that are intuitive, intelligent, and downright enjoyable to use.
+          </p>
+          <p>
+            Whether you're launching a new idea or modernizing an existing platform, we make sure your users get the
+            best possible experience and your business gets meaningful results.
+          </p>
         </div>
 
-        <div class="concept-brand reveal">
+        <div class="concept-grid" id="work">
+          <div class="concept-card content-block reveal">
+            <img src="assets/frame.svg" alt="Design icon" class="card-icon"/>
+            <h3>Design</h3>
+            <p>
+              We craft interfaces people actually enjoy using. We design with usability, accessibility, and
+              responsiveness baked in from the start.
+            </p>
+          </div>
+
+          <div class="concept-card content-block reveal">
+            <img src="assets/brackets.svg" alt="Development icon" class="card-icon"/>
+            <h3>Development</h3>
+            <p>
+              This is where pixels become products. We build fast, scalable, and maintainable software using technologies
+              like React, Next.js, and SwiftUI.
+            </p>
+          </div>
+
+          <div class="concept-card content-block reveal">
+            <img src="assets/blue-star.svg" alt="AI Integration icon" class="card-icon"/>
+            <h3>AI Integration</h3>
+            <p>
+              We enhance your product with AI-driven features that make the experience smarter, faster, and more
+              personalized for your users.
+            </p>
+          </div>
+        </div>
+
+        <div class="concept-feature content-block contact-panel reveal" id="contact">
+          <h2>Contact</h2>
+          <p>
+            Let's turn your next big idea into a real product — beautifully designed, thoughtfully engineered, and
+            powered by smart AI features your users will love.
+          </p>
+          <p class="contact-email">
+            <span>Email us at:</span>
+            <a href="mailto:contact@sunriseinventions.com" class="contact-email-link">contact@sunriseinventions.com</a>
+            <button type="button"
+                    class="copy-email-btn"
+                    data-copy-email="contact@sunriseinventions.com"
+                    aria-label="Copy email address">
+              <img src="assets/copy.svg" alt="" class="copy-email-icon" aria-hidden="true"/>
+            </button>
+            <span class="copy-feedback" aria-live="polite"></span>
+          </p>
+        </div>
+
+        <footer class="concept-brand reveal">
           <img src="assets/logo.svg" alt="Sunrise Inventions logo" class="concept-logo" />
-        </div>
+          <p>Making technology feel human, one product at a time.</p>
+          <small>&copy; <span id="year">2026</span> Sunrise Inventions. All rights reserved.</small>
+        </footer>
       </div>
     </section>
   </main>
