@@ -80,6 +80,7 @@ header::after {
   gap: 2px;
   padding-top: 8px;
   padding-bottom: 20px;
+  margin-right: clamp(20px, 3vw, 48px);
 }
 
 .logo-svg {
@@ -91,7 +92,7 @@ nav {
   display: flex;
   align-items: center;
   gap: clamp(24px, 3vw, 64px);
-  margin-left: clamp(22px, 5vw, 96px);
+  margin-left: clamp(36px, 6vw, 120px);
 }
 
 nav a {
@@ -385,15 +386,29 @@ footer p {
 }
 
 /* Responsive */
-@media (max-width: 1100px) {
-  .hero {
-    grid-template-columns: 1fr;
-    padding-top: clamp(12px, 2.5vw, 28px);
+@media (max-width: 1100px) and (min-width: 901px) {
+  nav {
+    margin-left: clamp(40px, 10vw, 160px);
   }
 
-  .hero-right {
-    order: -1;
-    margin-bottom: 2rem;
+  .hero {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    grid-template-columns: 1fr 1fr;
+    padding-top: clamp(10px, 2vw, 20px);
+    padding-bottom: clamp(12px, 2.4vw, 28px);
+    padding-left: clamp(14px, 4vw, 28px);
+    padding-right: clamp(14px, 4vw, 28px);
+    gap: 1.6rem;
+  }
+
+  h1 {
+    font-size: clamp(2.2rem, 5.6vw, 4.4rem);
+  }
+
+  .subtitle {
+    font-size: clamp(1rem, 2.2vw, 1.3rem);
   }
 
   .hero-svg {
@@ -401,7 +416,53 @@ footer p {
   }
 }
 
+@media (max-width: 900px) {
+  .hero {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    grid-template-columns: 1fr;
+    padding-top: clamp(12px, 2.5vw, 28px);
+    padding-left: clamp(14px, 4vw, 28px);
+    padding-right: clamp(14px, 4vw, 28px);
+    justify-items: center;
+    gap: 2.5rem;
+  }
+
+  .hero-left {
+    padding-left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 640px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .hero-left .subtitle {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-right {
+    order: 2;
+    margin-bottom: 0;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-svg {
+    max-width: 320px;
+    margin: 0 auto;
+  }
+}
+
 @media (max-width: 680px) {
+  nav {
+    display: none;
+  }
+
   header {
     padding: 18px 0;
   }

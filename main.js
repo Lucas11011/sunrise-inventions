@@ -34,13 +34,17 @@
 	}
 
     // Copy-to-clipboard for email address
+	// Hook into any button that declares a copy target
 	const copyButtons = document.querySelectorAll('[data-copy-email]');
+
+	// Prefer the async Clipboard API, but fall back to a hidden textarea
 	const copyToClipboard = async (text) => {
 		if (navigator.clipboard?.writeText) {
 			await navigator.clipboard.writeText(text);
 			return true;
 		}
 
+		// Legacy fallback for Safari/older browsers
 		const helper = document.createElement('textarea');
 		helper.value = text;
 		helper.setAttribute('readonly', '');
@@ -67,6 +71,7 @@
 			const email = button.dataset.copyEmail;
 			if (!email) return;
 
+			// Feedback element comes right after the button
 			const feedback = button.nextElementSibling?.classList.contains('copy-feedback')
 				? button.nextElementSibling
 				: null;
@@ -74,6 +79,7 @@
 			const copied = await copyToClipboard(email);
 			button.classList.toggle('copied', copied);
 
+			// Surface copy success/error for a moment
 			if (feedback) {
 				feedback.textContent = copied ? 'Copied!' : 'Copy unavailable';
 				feedback.classList.add('is-visible');
